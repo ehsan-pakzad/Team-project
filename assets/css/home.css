@@ -13,10 +13,15 @@ body {
   width: 100%;
   z-index: -1000;
 }
+section {
+  width: 85%;
+  margin: 0 auto;
+}
 
 /* header */
 
 header {
+  width: 100%;
   padding: 24px 32px;
   display: flex;
   justify-content: space-between;
@@ -135,9 +140,224 @@ header {
   font-weight: 400;
 }
 .counter h3 {
- padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 .counter p {
   color: #c8c7d8;
   text-align: center;
+}
+/* section2 */
+.section-2 {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+.title-carosell {
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.products-title {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.products-title h3 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.88px;
+}
+.products-title p {
+  color: #c8c7d8;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.252px;
+}
+.link-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+.link-product a {
+  color: #6966ff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.252px;
+}
+.link-product span {
+  width: 24px;
+  height: 24px;
+}
+
+/* Enhanced Professional Styles */
+.professional-swiper {
+  width: 100%;
+  height: 100%;
+  --swiper-theme-color: #6a5acd;
+  --swiper-navigation-size: 24px;
+}
+
+swiper-slide {
+  width: 392px;
+  height: 560px;
+  border-radius: 16px;
+  background: #393953;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #4a4a6a;
+}
+
+swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  gap: 16px;
+  height: 100%;
+}
+
+.title-products {
+  color: #a59eba;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.product-info h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.456px;
+  margin: 8px 0;
+}
+
+.time-products {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  padding: 12px 0;
+  border-top: 1px solid #4a4a6a;
+  border-bottom: 1px solid #4a4a6a;
+}
+
+.time-products p {
+  color: #a59eba;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+
+.dicription-project {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 24px;
+  letter-spacing: -0.176px;
+  opacity: 0.9;
+}
+
+.comments {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.comments span {
+  width: 24px;
+  height: 24px;
+
+}
+
+
+/* Email Hover Effect */
+.email-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #0000007a;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+swiper-slide:hover .email-hover {
+  height: 100%;
+}
+
+.email-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease 0.1s;
+}
+
+swiper-slide:hover .email-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.email-content svg {
+  transition: transform 0.3s ease;
+}
+
+.email-content:hover svg {
+  transform: scale(1.1);
+}
+
+.email-content span {
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  font-weight: 500;
 }

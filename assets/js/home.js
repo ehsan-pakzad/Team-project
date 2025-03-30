@@ -61,3 +61,47 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', checkScroll);
   checkScroll();
 });
+
+const listOfCardElements = document.querySelectorAll('.card');
+const cardContainer = document.querySelector('.card-container');
+const leftBtn = document.querySelector('.left-btn');
+const rightBtn = document.querySelector('.right-btn');
+
+// تابع برای بررسی وضعیت اسکرول و فعال/غیرفعال کردن دکمه‌ها
+function updateButtonStates() {
+  const scrollLeft = cardContainer.scrollLeft;
+  const maxScroll = cardContainer.scrollWidth - cardContainer.clientWidth;
+  
+  leftBtn.disabled = scrollLeft <= 0;
+  rightBtn.disabled = scrollLeft >= maxScroll;
+}
+
+// کلیک روی کارت‌ها
+listOfCardElements.forEach((cardElement, index) => {
+  cardElement.addEventListener('click', () => {
+    const scrollLeft = index * listOfCardElements[0].offsetWidth;
+    cardContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+  });
+});
+
+// کلیک روی دکمه چپ
+leftBtn.addEventListener('click', () => {
+  cardContainer.scrollBy({
+    left: -listOfCardElements[0].offsetWidth,
+    behavior: 'smooth'
+  });
+});
+
+// کلیک روی دکمه راست
+rightBtn.addEventListener('click', () => {
+  cardContainer.scrollBy({
+    left: listOfCardElements[0].offsetWidth,
+    behavior: 'smooth'
+  });
+});
+
+// رویداد اسکرول برای بررسی وضعیت دکمه‌ها
+cardContainer.addEventListener('scroll', updateButtonStates);
+
+// مقداردهی اولیه وضعیت دکمه‌ها
+updateButtonStates();
