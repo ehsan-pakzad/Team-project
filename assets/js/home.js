@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  const scrollThreshold = 100; // نقطه اسکرول برای فعال شدن افکت
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // کنترل نرم‌تر برای انیمیشن
+    const scrollPercent = Math.min(window.scrollY / scrollThreshold, 1);
+    header.style.backgroundColor = `rgba(10, 10, 20, ${0.9 * scrollPercent})`;
+    header.style.backdropFilter = `blur(${10 * scrollPercent}px)`;
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
   const counters = document.querySelectorAll('.counter h1');
   const counterContainer = document.querySelector('.counter-container');
 
